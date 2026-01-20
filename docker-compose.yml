@@ -1,0 +1,24 @@
+services:
+  service_a:
+    build:
+      context: .              # บอกว่า Context คือโฟลเดอร์นอกสุด
+      dockerfile: service_a/Dockerfile # บอกที่อยู่ไฟล์ Dockerfile
+    ports:
+      - "50051:50051"
+
+  service_b:
+    build:
+      context: .
+      dockerfile: service_b/Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - service_a
+      - service_c
+
+  service_c:
+    build:
+      context: .
+      dockerfile: service_c/Dockerfile
+    ports:
+      - "8002:8000"

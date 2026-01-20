@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package user;
+
+// บริการดึงข้อมูลผู้ใช้
+service UserService {
+  rpc GetUserDetail (UserRequest) returns (UserResponse) {}
+}
+
+// สิ่งที่ส่งเข้าไป (Request)
+message UserRequest {
+  string user_id = 1;
+}
+
+// สิ่งที่ตอบกลับมา (Response)
+message UserResponse {
+  string name = 1;
+  string email = 2;
+}
