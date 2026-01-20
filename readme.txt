@@ -30,7 +30,7 @@
 โปรเจ็คนี้ประกอบด้วย 3 Microservices ที่ทำงานร่วมกันดังนี้:
 
 1. Service A (Data Provider): 
-   - ทำหน้าที่เป็น gRPC Server 
+   - รองรับทั้ง REST (สำหรับตรวจสอบสถานะ) และ gRPC (สำหรับให้บริการข้อมูล User)
    - คอยให้บริการข้อมูล User (ชื่อและอีเมล) ผ่านโปรโตคอล gRPC (Port 50051)
    
 2. Service B (Gateway & Orchestrator): 
